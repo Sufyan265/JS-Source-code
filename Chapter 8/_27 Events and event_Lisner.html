@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #27 Events & event_Lisner</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="event1">
+        <button onclick="alert('Asslam-u-alaikim')">Click me</button>
+        <button onmouseenter="alert('Walaikum-u-slam')">Hover me</button>
+    </div>
+    <div onmouseenter="console.log('Hover div tag')" onclick="console.log('Click the div tag')">
+        Hover in div tag and see in console
+    </div>
+
+    <div>___________________________</div>
+
+
+    <div>
+        <button id="btn">Function Click</button>
+        <button id="btn2">Click for 2 function</button>
+    </div>
+
+
+
+    <script>
+        let btn = document.getElementById("btn")
+
+        // #btn button pr click able function ↓
+        btn.addEventListener("click", function () {
+            alert("My name function button")
+        })
+
+
+        let btn2 = document.getElementById("btn2")
+
+        // 2 function 1 button me lgany k liya. ↓
+        let a = function (e) {
+            // is sy jis button ya element pr event hua ha wo aa jay ga ↓
+            console.log(e.target)
+
+            // is sy event type ka pta chla skty he yani Click, mouseEnter, etc. ↓
+            console.log(e.type)
+
+            // jb kisi box pr event lga rhy he us k ander k element pr bhi event lagta ha. .currentTarget sy us k ander mojud kis element sy event lga ha pta chla skty he ↓
+            console.log(e.currentTarget)
+
+            // user sy event ki kis side me click kia aap us k pta chla skty he X-axis or Y-axis me ↓
+            console.log("X-axis= " + e.clientX, "Y-axis= " + e.clientY)
+
+
+            alert("I am first brother")
+        }
+        let b = function (e) {
+            alert("I am second brother")
+        }
+
+        btn2.addEventListener("click", a)
+
+        btn2.addEventListener("click", b)
+
+        let x = prompt("For only first type(f) for second type(s)")
+
+        if (x == "f") {
+            // kisi event (click able function) ko remove krny k liya ↓ 
+            btn2.removeEventListener("click", b)
+        }
+
+        else if (x == "s") {
+            btn2.removeEventListener("click", a)
+        }
+
+
+
+    </script>
+</body>
+
+</html>

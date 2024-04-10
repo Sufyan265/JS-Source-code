@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #20 table links</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table">
+            <caption>The boys table</caption>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Username</th>
+                </tr>
+            <tbody>
+                <tr class="table-light">
+                    <th scope="row">1</th>
+                    <td>Muhammad</td>
+                    <td>Sufyan</td>
+                    <td>@sufi</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Muhammad</td>
+                    <td>Haroon</td>
+                    <td>@hann</td>
+                </tr>
+                <tr class="table-light">
+                    <th scope="row">3</th>
+                    <td>Ali</td>
+                    <td>Ahmad</td>
+                    <td>@ali265</td>
+                </tr>
+            </tbody>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="4" style="text-align: center;"><b>Coming Soon</b></td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+
+
+    <script>
+        let t = document.body.firstElementChild.firstElementChild
+        console.log(t.rows) // is sy table ki saari rows ka collection mil jay ga
+        console.log(t.caption) // table caption access krny k liya
+
+        console.log(t.tHead)
+        console.log(t.tHead.firstElementChild)
+
+        console.log(t.tFoot)
+
+        // console.log(t.tBodies[0])
+        let b = t.tBodies[0] // tbody ko access krny k liya
+        console.log(b.rows) // tbody ki rows ko access krny k liya
+
+        console.log(b.rows[0].cells) // "tr" k children ki collection access krny k liya
+        console.log(b.rows[0].rowIndex) // is trha hm iski index ka pta chla skty he
+
+        console.log(b.rows[0].sectionRowIndex)
+
+        console.log(b.rows[0].cells[1].cellIndex) // td ki index maloom krny k liya
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

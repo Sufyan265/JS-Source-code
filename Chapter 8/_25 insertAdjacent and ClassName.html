@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        .blue {
+            color: white;
+            background-color: blue;
+        }
+
+        .red {
+            color: white;
+            background-color: red;
+        }
+
+        .purple {
+            color: white;
+            background-color: purple;
+        }
+
+        .text-white h3 {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="slide1">This first div</div>
+    <span>__________________________________2</span>
+
+    <div id="box1" class="red text-white">
+        This is box1
+        <h3>My name is span</h3>
+    </div>
+
+
+    <script>
+        let slide1 = document.getElementById("slide1");
+
+        // ye #slide1 sy pahly print hoga (outside) ↓
+        slide1.insertAdjacentHTML("beforebegin", "<h2>This is beforeBegin</h2>");
+
+        // ye #slide1 k baad print hoga (outside) ↓
+        slide1.insertAdjacentHTML("afterend", "<h2>This is afterEnd</h2>");
+
+        // ye #slide1 k last me child k toor pr print hoga (inside) ↓
+        slide1.insertAdjacentHTML("beforeend", "<h2>This is beforeEnd</h2>");
+
+        // ye #slide1 k start me child k toor pr print hoga (inside) ↓
+        slide1.insertAdjacentHTML("afterbegin", "<h2>This is afterBegin</h2>");
+
+        // kisi bhi element ko remove krny k liya ↓
+        // slide1.remove()
+
+        // document.write("_________________________________2")
+
+        let box1 = document.getElementById("box1");
+
+        // class name change krny k liya ↓  
+        // box1.className = "blue text-white"
+
+        // is sy #box1 ki sari classes aa jay gi ↓
+        console.log(box1.classList)
+
+        // kisi sepcific class ko remove krny k liya ↓
+        box1.classList.remove("red")
+
+        // new class add krny k liya ↓
+        box1.classList.add("purple")
+
+        // agar .purple class #box1 me ha to remove kr dy ga agar nhi ha #box1 to add kr dy ga
+        box1.classList.toggle("red")
+
+        // ye check krny liya ha k .red class ha ya nhi (true or false)
+        console.log(box1.classList.contains("red"))
+
+
+
+
+    </script>
+</body>
+
+</html>

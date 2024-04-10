@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #29 Promises</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Check console</h2>
+
+    <script>
+// promise syntax
+/*
+let promise = new Promise((resolve, reject) => {
+  console.log("Promise is pending")
+  setTimeout(() => {
+    console.log("the function is fulfilled")
+    resolve("Sufyan")
+  }, 3000)
+})
+console.log(promise)
+*/
+
+// prmise sy p1 or p2 parallel execute ho jay gi (yaani p1 or p2 3 seconds k ander execute ho jay gy) ↓ 
+
+let p1 = new Promise((resolve, reject) => {
+  console.log("1st Promise is pending")
+  setTimeout(() => {
+    console.log("the function is resolved")
+    resolve("Sufyan")
+
+  }, 3000)
+})
+
+let p2 = new Promise((resolve, reject) => {
+  console.log("2nd Promise is pending")
+  setTimeout(() => {
+    console.log("the function is rejected")
+    reject(new Error("I am a error"))
+
+  }, 3000)
+})
+// console.log(p1, p2)
+
+// p1 complete hony k baad promise ki value get krny k liya ↓ 
+p1.then((value) => {
+  console.log(value)
+})
+
+// is trha p2 ka error catch ho jay ga (yaani handle ho jay ga) ↓
+p2.catch((error) => {
+  console.log("The error accured in p2")
+})
+
+// console.log("_________________________________2")
+
+let p3 = new Promise((resolve, reject) => {
+  console.log("3rd Promise is pending")
+  setTimeout(() => {
+    console.log("function is rejected")
+    reject(new Error("I am 3rd promise error"))
+
+  }, 4000)
+})
+
+// is tra agr promise resolve ho gya to "value" aa jay gi or agr promise reject ho gya to "error" function aa jay ga ↓  
+p3.then((value) => {
+  console.log(value)
+}).catch((error) => {
+  console.log("Error accured in p3 bro")
+  console.log(error)
+
+})
+
+
+
+    </script>
+</body>
+</html>

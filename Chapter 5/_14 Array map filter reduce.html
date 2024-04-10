@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #14 Array map filter reduce</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Check console</h2>
+
+    <script>
+        // .map method
+        let num = [22, 44, 99, 55, 77, 88, "Hassan"]
+
+        let n = num.map((value, i, a) => { // map 1 new array bnata  ha
+            console.log(value, i, a) // num.map[value, index, array]
+            return value + 2
+        })
+        console.log(n)
+
+        console.log("___________________________________2")
+
+        // array filter method
+        let ary = [12, 34, 22, 11, 3]
+        let f = ary.filter((fil) => { // ye new array bnata ha
+            return fil < 20
+        })
+        console.log(f)
+
+        console.log("___________________________________3")
+
+        // array reduce method
+
+
+        let ary2 = [2, 3, 2, 4, 5]
+        let r = ary2.reduce((p1, p2) => {
+            return p1 + p2
+        })
+        console.log(r)
+
+        /*
+        let ary3 = [2, 3, 2, 4, 5]
+        const r2 = (p3, p4)=> {
+          return p3 + p4
+        }
+        let newArr = ary3.reduce(r2) 
+        console.log(newArr)
+        */
+
+
+
+
+    </script>
+</body>
+
+</html>

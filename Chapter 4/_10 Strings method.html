@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #10 Strings method</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Check console</h2>
+
+    <script>
+
+        let name = "Sufyan"
+        let name2 = "Sufyan Sufyan"
+        let numb = 45
+
+        console.log(name.length) // ye property ha
+
+        console.log(name.toUpperCase()) // ye function ha (function k aagy khali brakit lagti ha)
+
+        console.log(name.toLowerCase())
+
+        console.log(name.slice(2, 5)) // ye 2 sy ly kr 5 tk print kry ga. 5 included nhi ha
+
+        console.log(name.slice(2)) // ye 2 sy aagy sary chrachter print kr dy ga
+
+        console.log(name2.replace("Suf", "Muf")) // replace krny k liya
+        console.log(name2.replaceAll(/Suf/g, "Zuf")) // hr jga sy replace krny k liya
+
+        console.log(name.padStart(10, "0")) // start me padding deny k liya
+
+        console.log(name.padEnd(10, "X")) // end me padding deny k liya
+
+
+
+        console.log("____________________________2")
+
+        let naam = "Haroon"
+        let friend = "Rehan"
+
+
+        console.log(naam.concat(" is a friend of ", friend, ". Ok!")) // strings ko aapas me jorrny k liya
+
+        let friend2 = "         Kashif        " // usless spaces ko remove kr deta ha
+
+        console.log(friend2.trim())
+
+        console.log("____________________________3")
+
+        let nm = "Soban"
+
+        // console.log(nm[0])
+        // console.log(nm[1])
+        // console.log(nm[2])
+
+        for (let i = 0; i < nm.length; i++) {
+            console.log(nm[i])
+        }
+
+
+    </script>
+</body>
+
+</html>

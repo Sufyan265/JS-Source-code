@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Check console</h2>
+
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log("Promise p1 is pending")
+                resolve("Done")
+            }, 2000)
+        })
+
+        // hm is tra multiple handler lgaa skty he ↓ 
+        // ye independently execute ho gy (yaani pahly waly ka wait nhi kia jay ga) ↓
+        p1.then(() => {
+            console.log("The promise p1 is now Done")
+        })
+
+        p1.then(() => {
+            console.log("This is second hendler")
+        })
+
+
+    </script>
+</body>
+
+</html>

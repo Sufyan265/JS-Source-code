@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>Check console</h2>
+  
+  <script>
+
+
+
+    // For loop
+
+    for (let i = 0; i <= 5; i++) {
+      console.log("Pakistan")
+    }
+
+
+    console.log("___________________________2")
+
+    let sum = 0;
+    let n = prompt("Type a natural number: ");
+    n = Number.parseInt(n)
+
+    for (let i = 0; i < n; i++) {
+      sum += (i + 1)
+      console.log((i++), "+ " + i)
+    }
+    console.log("sum of first " + n + " natural numbers is " + sum)
+
+
+    console.log("___________________________3")
+
+
+    // For in loop
+
+    let k = {
+      Sufyan: 70,
+      Haroon: 80,
+      Saim: 60,
+      Ali: 65
+    }
+
+    for (let a in k) {
+      console.log("Matrks of " + a + " are " + k[a])
+      // console.log(a)
+    }
+
+    console.log("___________________________4")
+
+    // For of loop
+
+    let boys = ["sufyan", "Ali", "Haroon", "Insan"];
+
+    for (let name of boys) {
+      console.log(name)
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #26 setTimeOut & setInterval</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first"></div>
+    <div id="second"></div>
+
+    <script>
+
+        // kisi exeicution ko delay krny k liya (2s delay)↓
+        let a = setTimeout(function () {
+            let first = document.getElementById("first")
+            first.innerHTML = ("<p>To kesy he aap log </p><br>")
+        }, 2000)
+
+        // setTimeout "a" ki execution ko khtam krny k liya ↓
+        // clearTimeout(a)
+
+        console.log("_________________________________2")
+
+
+
+        const value = (a, b) => {
+            console.log(`What is the sum of ${a} and ${b}?`)
+            console.log("Answer is show after 3 seconds ↓")
+        }
+
+        // single line me user sy 2 numbers leny k liya ↓
+        let input = prompt("Write two numbers seprete with space ")
+        let [num1, num2] = input.split(" ")
+
+        const sum = (a, b) => {
+            console.log("The answer is = ", a + b)
+        }
+
+        console.log(value(parseInt(num1), parseInt(num2)))
+
+        setTimeout(sum, 3000, parseInt(num1), parseInt(num2))
+
+        // console.log("_________________________________3")
+
+        // ye repeatedly execute hota rhy ga (hr 3 second baad) (infinit)↓
+        setInterval(function () {
+            document.write("<p>Its rupeat after every 5 second</p>")
+        }, 5000)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Array Elements Example</title>
+  <script>
+    let myArray = ["Element 1", "Element 2", "Element 3", "Element 4", "Element 5"];
+    let currentIndex = 0;
+
+    function changeArrayElement() {
+      let displayedElement = document.getElementById('displayedElement');
+      currentIndex = (currentIndex + 1) % myArray.length;
+      displayedElement.textContent = myArray[currentIndex];
+    }
+  </script>
+</head>
+<body>
+  <h1>Array Elements</h1>
+  <div id="displayedElement"></div>
+  <button onclick="changeArrayElement()">Change</button>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #12 Array methods</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Check console</h2>
+
+    <script>
+        // Array methods
+        let nm = [4, 10, 15, 20]
+        let c = nm.toString() // for array change Number to String
+        console.log(c)
+
+        let d = nm.join("_") // array k sabhi element ko join krny k liya
+        console.log(d)
+
+        let r = nm.pop() // last element ko remove kr deta ha
+        console.log(nm)
+
+        console.log(r) // removed element return krny k liya
+
+
+        let r2 = nm.push(56) // new element array k last me add krny k liya
+        console.log(nm)
+
+        let r3 = nm.shift() // first element ko remove kr deta ha
+        console.log(nm)
+
+        let r4 = nm.unshift(33) // new element array k first me add krny k liya
+        console.log(nm)
+
+        console.log("_________________________________2")
+
+        console.group("2nd group")
+        let num2 = [2, 4, 6, 8, 10]
+        let num3 = [22, 33, 55, 66, 99]
+        /*
+        delete num2[0] // 1 element ko delete krny k lya. Is sy array ki length ko frak nhi prta
+        console.log(num2)
+        */
+        let colap = num2.concat(num3) // 2 array ko milany k liya
+        console.log(colap)
+
+
+
+        let random = [23, 45, 73, 91, 16, 33]
+        random.sort() // ye alphabet me sort krta ha ( pahly saary 1 sy start hony waly, phir 2 se hony waly phir 3 se...)
+        // console.log(random)
+        console.groupEnd()
+
+
+        let compare = (a, b) => {
+            return a - b
+        }
+        let random2 = [23, 45, 73, 91, 16, 33]
+        random.sort(compare) // assanding order me sort krny k liya. (disending k liya "b - a" ho ga)
+        console.log(random2)
+
+
+        let random3 = [23, 45, 73, 91, 16, 33]
+        random3.reverse()
+        console.log(random3)
+
+        console.log("_________________________________3")
+
+
+
+        let random4 = [23, 45, 73, 91, 16, 33]
+
+        random4.splice(2, 3, 111, 222, 333, 444) // ← pahla digit mean 2 sy shuru kro. dusry ka mean 3 remove krdo. Aggy jo add krny he wo abhi likh de
+        console.log(random4)
+
+
+
+        let random5 = [23, 45, 73, 91, 16, 33]
+        // ye new array create krta ha 
+        let newArray = random5.slice(2, 5) // pahly waly ka mean: 2 sy start kro. second mean: 5 tk remove krdo. (5 include nhi hoga)
+        console.log(newArray)
+
+
+
+
+
+    </script>
+</body>
+
+</html>

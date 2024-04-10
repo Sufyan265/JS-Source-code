@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// Chapter 2 practice set
+// Q1
+let age = prompt("what's ypur age? ");
+
+if (age>10 && age<20) {
+  console.log("Your age is lies in 10 and 20")
+}
+else {
+   console.log("Your age is not lies in 10 and 20")
+}
+
+// Q2 
+
+let name = prompt("Write name: ");
+
+switch (name) {
+  case 'sufyan': 
+    console.log("Sufyan's father name is 'Muhammad Saleem'");
+    break;
+  case 'haroon': 
+    console.log("Haroon's father name is 'Muhammad Abdullah'");
+    break;
+  case 'ali': 
+    console.log("Ali's father name is 'Riaz'");
+    break;
+
+  default:
+    console.log ("Please! write the correct name")
+    
+}
+
+// Q3
+
+let num = prompt("Write number: ");
+num = Number.parseInt(num);
+
+if(num % 2 == 0 && num % 3 == 0) {
+  console.log ("Your number is divisible by 2 and 3")
+}
+else {
+  console.log ("Your number is not divisible by 2 and 3")
+}
+// Q4
+
+x = prompt ("Type your age: ")
+x = Number.parseInt(x);
+
+  console.log(x>18? "You can drive" :"You cannot drive");
+
+
+
+
+
+  
+    </script>
+</body>
+</html>

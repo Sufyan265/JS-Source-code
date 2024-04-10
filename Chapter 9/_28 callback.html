@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Check console</h2>
+
+    <script>
+        // Synchronous programming 1 1 line kr k chalta ha yaani pahly "a" exicute hoga phir "b" or phir "c" ↓
+        /*
+        let a = prompt("What's is your name? ")
+        let b = prompt("What's is your father name ")
+        let c = prompt("What's is your age ")
+         
+        console.log("His name is " + a + " his father name is " + b + " and his age is " + c)
+        */
+        // Asynchronous programming me agr kisi me time set ha dely ka to compiler isy background me bhej dy ga k ye apny time schedule k baad me exicute ho jay gi. example ↓
+        /*
+        console.log("Start")
+        setTimeout(function(){
+          console.log("Asslam-u-alaikum now I am using laptop")
+        }, 2000)
+        console.log("End")
+        */
+
+        function loadScript(src, callback) {
+
+            let script = document.createElement("script")
+            script.src = src;
+
+            // koi element load hony k baad koi action krwany k liya (.onload) ↓
+            script.onload = function () {
+                console.log("Your script is loaded with this SRC: " + src)
+                // is sy callback() function run hoga ↓
+                callback(null, src)
+            }
+            // agr koi element load nhi hua yani error aa gya to koi action krwany k liya (for example script ka src thik na hona) (.onerror) ↓
+            script.onerror = function () {
+                console.log("Error loading script with this SRC: " + src)
+
+                // agr error aaya to ye show hoga ↓
+                callback(new Error("src prduce this error"))
+            }
+            document.body.appendChild(script)
+
+        }
+
+        function good(error, src) {
+            if (error) {
+                // is sy error type bhi print hogi ("new Error" k sath ↓
+                console.log(error)
+                return
+            }
+            alert("Very Good! " + src)
+        }
+        // callback() function sy kisi dusry function (good) ko bhi loadScript() exicute hony baad run kry ga ↓
+        loadScript("shttps://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js", good)
+
+
+
+
+
+    </script>
+</body>
+
+</html>

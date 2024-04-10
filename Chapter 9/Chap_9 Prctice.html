@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #Chap_9 Prctice</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Check console</h2>
+
+    <script>
+        /*
+        // Q1 
+        const loadScript = async (src) => {
+          return new Promise((resolve, reject) => {
+            let script = document.createElement("script")
+            script.src = src;
+            document.head.appendChild(script)
+        
+            script.onload = () => {
+              resolve(src)
+            }
+            script.onerror = () => {
+              reject(new Error("Some problem occured in loadScript = "))
+            }
+          })
+        }
+        
+        let p = loadScript("shttps://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js")
+        
+        
+        p.then((value) => {
+          console.log("Script successfully loaded with src = " + value)
+        }).catch((error) => {
+          console.log(error)
+        })
+        */
+
+        /*
+        // Q2 
+        async function loadScript(src) {
+          return new Promise((resolve, reject) => {
+        
+            let script = document.createElement("script")
+            script.src = src;
+            document.body.appendChild(script)
+        
+            script.onload = () => {
+              resolve("Script successfully loaded with src = " + src)
+            }
+            script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+            
+          })
+        }
+        
+        let load = async () => {
+          // Date() sy current local date & time aa jay ga (or Date() sy pta chla skty he k script kitni der me load hui) ↓
+          console.log(new Date().getMilliseconds())
+          
+          let a = await loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js")
+          console.log(a)
+          
+          console.log(new Date().getMilliseconds())
+        }
+        load()
+        */
+        /*
+        // Q3 
+        const rej = () => {
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              reject(new Error("This is not acceptable"))
+            }, 300)
+          })
+        }
+        const wait = async () => {
+          try {
+            let a = await rej()
+            console.log(a)
+          }
+          catch (error){
+            console.log("This rejection error is handle = " + error)
+          }
+        }
+        wait()
+        */
+
+        // Q4
+        let p1 = async () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(10)
+                }, 2000)
+            })
+        }
+
+        let p2 = async () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(20)
+                }, 1000)
+            })
+        }
+
+        let p3 = async () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(30)
+                }, 3000)
+            })
+        }
+
+        // const combine = async () => {
+        // let run1 = await p1() 
+        //   // console.log(run1)
+        //   let run2 = await p2() 
+        //   // console.log(run2)
+        //   let run3 = await p3() 
+        //   // console.log(run3)
+        //   console.log(run1, run2, run3)
+        // }
+        // combine()
+
+        const combine2 = async () => {
+            console.time("time")
+
+            let method = await Promise.all([p1(), p2(), p3()])
+            console.log(method)
+
+
+            console.timeEnd("time")
+        }
+        combine2()
+
+
+
+
+
+    </script>
+</body>
+
+</html>

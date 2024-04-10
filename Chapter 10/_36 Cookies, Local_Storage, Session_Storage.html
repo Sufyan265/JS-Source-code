@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #36 Cookies & Local_Storage & Session_Storage</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Check console</h2>
+
+    <script>
+/*
+// Cookie
+console.log(document.cookie)
+// new cookie add krny liya ↓ 
+document.cookie = "name=Sufyan265"
+document.cookie = "name2=Saleem265"
+document.cookie = "name=sufyan"
+
+// user sy cookie add krwany liya ↓
+let key = prompt("Enter your cookie key")
+let value = prompt("Enter your cookie value")
+// "encodeURIComponent()" sy special chracter bhi add kr skty he cookies me (special chracters ko decodeURIComponent("chracter") sy check kr skty he) ↓ 
+document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+
+console.log(document.cookie)
+console.log("_________________________________2")
+*/
+
+// local storage 
+// local storage remove nhi hoti reload sy ya again open krnny sy ↓
+// setItem() sy new local storage item add krny k liya ↓
+localStorage.setItem("name", "Sufyan")
+
+let key2 = prompt("Enter your local storage key")
+let value2 = prompt("Enter your local storage value")
+
+localStorage.setItem(key2, value2)
+
+
+// getItem() sy kisi item ki "key" sy us ki "value" maloom krny k liya ↓
+console.log(`New local storage key is "${key2}" and value is "${localStorage.getItem(key2)}".`)
+
+// removeItem() kisi item ko key k zerya remove krny k liya ↓ 
+localStorage.removeItem("name")
+
+// clear() Local Strage ko clear krny liya ↓ 
+// localStorage.clear()
+
+// key(index) kisi item ko index sy access krny k liya ↓ 
+console.log(localStorage.key(2))
+console.log("_____________________________________3")
+
+/*
+// Session Storage
+// session storage remove ho jati ha agar page ko new tab me khol le to ↓
+sessionStorage.setItem("first", "session")
+
+sessionStorage.getItem("first")
+
+sessionStorage.removeItem("first")
+
+sessionStorage.clear()
+*/
+
+// console.log("_________________________________4")
+
+// agar local yaa session storage me koi item change yaa update hoti hoti ha to second tab me alert ya console me msg krny k liya ↓
+window.onstorage = (a) => {
+  console.log("The storage value is changed")
+  console.log(a)
+}
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

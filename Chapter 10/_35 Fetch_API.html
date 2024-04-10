@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Check console</h2>
+
+    <script>
+        /*
+        // API ko fetch krny ka method ↓
+        let p = fetch("https://api.open-meteo.com/v1/forecast?latitude=30.17&longitude=72.65&hourly=temperature_2m&daily=temperature_2m_max,temperature_2m_min&timezone=auto")
+        
+        // hmesha 2 .then() use ho gy API ko access krny k liya ↓
+        p.then((response) => {
+          // is sy API ka status code pta kr skty he ↓
+            console.log(response.status)
+          // agar API thik sy load ho gai to "true" aay ga agar API me koi problem  hui to "false" ↓
+          console.log(response.ok)
+          // console.log(response.headers)
+          return response.json()
+        }).then((value) => {
+          console.log(value)
+        })
+        console.log("_________________________________2")
+        */
+        /*
+        let options = {
+          // "POST" API me koi new data add krny k liya ↓ 
+          method: "POST",
+          headers: {
+            "Content-type": "application/json"
+          },
+          // customize krny k liya ↓
+          body: JSON.stringify({
+            title: "Sufyan",
+            body: "Saleem",
+            userId: 265,
+          }),
+        }
+        
+        fetch('https://jsonplaceholder.typicode.com/posts', options)
+          .then((response) => response.json())
+          .then((json) => console.log(json));
+          console.log("_________________________________3")
+        */
+
+        // with "async await" ↓
+        const createTodo = async (doThis) => {
+            let options = {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(doThis),
+            }
+
+            let pr = await fetch('https://jsonplaceholder.typicode.com/posts', options)
+            let response = await pr.json()
+            return response
+        }
+
+        const getTodo = async (id) => {
+            // is tra custom id ko call kr skty he ↓
+            let api = await fetch('https://jsonplaceholder.typicode.com/posts/' + id)
+            let r = await api.json()
+            return r
+        }
+
+
+        const main = async () => {
+            let doThis = {
+                title: "Muhammad",
+                body: "Sufyan",
+                userId: 2265,
+            }
+            console.log(await createTodo(doThis))
+            console.log(await getTodo(5))
+        }
+        main()
+
+
+    </script>
+</body>
+
+</html>

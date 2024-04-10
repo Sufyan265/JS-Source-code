@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #15 Js All console value</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Check console</h2>
+
+    <script>
+        console.log(console) // sabhi console ki list check krny k liya
+
+        console.error("This is an error") // error dikhany k liya
+
+        console.warn("Hey don't angry me") // warning dikhany k liya
+
+        console.assert(5 > 10) // aggar condition false ho gai to ye error dikhay ga
+
+        // console.clear() // consoel ko clear krny k liya
+
+        console.info("This is very important info") // ye almost console.log sy similer hota ha
+
+        let obj = {
+            sufyan: 70,
+            Rehan: 80,
+            Haroon: 75
+        }
+
+        console.log(obj)
+        console.table(obj) // ye objact ya array ko table ki form me dikhata ha
+
+        console.group("2nd group") // ye groupEnd k darmyan jitna bhi data hota ha usko 1 group ki form me print show krwata ha
+
+        console.time("myTime") // is k darmyan jo code hoga us ka time check krny k liya use hota ha ( yaani code kitny time me run hua)
+
+        console.log("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, ")
+
+        console.timeEnd("myTime")
+        console.groupEnd("2nd group")
+
+
+    </script>
+</body>
+
+</html>

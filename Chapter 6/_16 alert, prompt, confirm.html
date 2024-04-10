@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #16 alert, prompt & confirm</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Check console</h2>
+
+    <script>
+        alert("Enter the value of s")
+        let s = prompt("Enter s here", "265") // comma sy aagy defult value lga skty he. Jo prompt k ander defult me lag jata
+
+        s = Number.parseInt(s)
+
+        // alert("Your entred value typeof is " + typeof s)
+
+        let w = confirm("Do you want to write on page or not?") // ye "Ok" or "cancel" ka option deta ha (OK kia to s print hoga cancel kia to nhi hoga)
+        if (w) {
+            document.write(s) // Is me jo bhi likho wo page pr print kr deta ha
+        }
+        else {
+            document.write(" Click ok for write s on screen")
+        }
+
+
+
+    </script>
+</body>
+
+</html>

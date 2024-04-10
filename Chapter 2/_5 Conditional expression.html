@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+
+let a = prompt("whats your age?") // "prompt" puchta ha ?
+
+// let b = alert("This file is effected!"); // "alert" btata ha !
+
+a = Number.parseInt(a) // "parseInt" used for converting string to number
+
+if(a < 0) {
+  alert("That is invalid age")
+}
+  else if(a < 9) {
+  alert("You are a kid. So you cannot even think about driving")
+  }
+
+    else if(a < 18 && a > 9) {
+      alert("Sorry! You can able for licence after 18")
+    }
+
+else {
+ alert("Your age is enough for licence. You can able for apply driving licence")
+}
+
+console.log("___________________________")
+
+// Ternary operator
+
+let b = prompt("What is your age? ")
+
+console.log("Your age is", b>18? "Valid for driving" :"invalid for driving")
+
+
+
+
+
+
+  </script>
+</body>
+</html>

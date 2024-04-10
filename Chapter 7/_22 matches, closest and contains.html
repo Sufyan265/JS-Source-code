@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #22 matches, closest & contains</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        #child {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="1st">
+        This is first div
+        <span id="child">This is span child of 1st div</span>
+    </div>
+
+    <div class="box" id="2nd">This is second div</div>
+
+
+    <script>
+        let first = document.getElementById("1st")
+
+        // yha pr ye check kry ga .box "#first" ki class ya id ha ya nhi (yaani CSS Selector ha ya nhi) (true or false) ↓ 
+        console.log(first.matches(".box"))
+
+
+        // ye #child sy shuru kry ga k ye CSS Selector ko match krta ha ya nhi. agar nhi to ye is k parent k pas jay ga usy check kry ga phir bhi nhi to us k parent k pas phir bhi nhi to so on ↓
+        console.log(child.closest(".box"))
+
+
+        let sp = document.getElementById("child")
+        // ye check krny k liya ha k kya #child #1st kaa child ha ya nhi (true or false) ↓
+        console.log(first.contains(sp))
+
+
+
+
+    </script>
+</body>
+
+</html>

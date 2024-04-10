@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page Chap_10 Practice (2)</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        .CuserInput {
+            font-size: 19px;
+            padding: 10px;
+            margin: 5px 0;
+            width: 400px;
+            height: 200px;
+            /* display: block; */
+        }
+
+        .saveButton {
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        .fade-out {
+            animation: fadeOut 1s ease-in-out;
+            /* animation-fill-mode: forwards; */
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container2 {
+            margin: 30px 0 0 0;
+        }
+
+        .key {
+            font-size: 17px;
+            width: 200px;
+            height: 24px;
+        }
+
+        .getButton {
+            width: 50px;
+            height: 30px;
+            background-color: rgb(92, 92, 255);
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .deleteButton {
+            width: 50px;
+            height: 30px;
+            background-color: rgb(255, 82, 82);
+            /* background-color: rgb(233, 47, 233); */
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #message {
+            font-size: 19px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        #title {
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Note pad</h1>
+    <div class="container">
+        <label for="userInput">Enter your note:</label>
+        <textarea id="userInput" class="CuserInput" placeholder="Enter note"></textarea>
+        <button class="saveButton" onclick="saveNote()">Save</button>
+    </div>
+    <div class="container2">
+        <input type="text" id="userKey" class="key" placeholder="Enter key" value="note ">
+        <button class="getButton" onclick="getNote()">Get</button>
+        <button class="deleteButton" onclick="deleteNote()">Delete</button>
+    </div>
+
+    <p id="title"></p>
+    <p id="message"></p>
+
+    <script>
+        let counter = 1;
+        function saveNote() {
+            let userInput = document.getElementById('userInput').value;
+            let message = document.getElementById('message');
+
+            if (userInput == "" || userInput == null || userInput == undefined) {
+                message.style.color = "red"
+                message.innerHTML = "Please enter a valid value!";
+            }
+            else {
+                let title = document.getElementById('title');
+                title.innerHTML = "";
+                localStorage.setItem("note " + counter, userInput);
+                message.style.color = "black"
+                message.innerHTML = "Saved! note no. " + counter;
+
+                setTimeout(function () {
+                    message.classList.add('fade-out');
+                    setTimeout(function () {
+                        message.innerHTML = '';
+                        message.classList.remove('fade-out');
+                    }, 1000);
+                }, 1500);
+
+                counter++;
+            }
+
+        }
+
+        const getNote = () => {
+            let userKey = document.getElementById('userKey').value;
+            let message = document.getElementById('message');
+            let title = document.getElementById('title');
+            let get = localStorage.getItem(userKey);
+
+
+            if (get) {
+                title.innerHTML = `${userKey}: `;
+
+                message.style.color = "rgb(92, 92, 255)"
+                // message.innerHTML = "Note: " + get;
+                message.innerHTML = get;
+            }
+            else {
+                message.style.color = "red"
+                message.innerHTML = "No note found for the provided key.";
+
+            }
+
+        }
+
+        const deleteNote = () => {
+            let userKey = document.getElementById('userKey').value;
+            let message = document.getElementById('message');
+            let title = document.getElementById('title');
+            title.innerHTML = "";
+
+            if (localStorage.getItem(userKey)) {
+                localStorage.removeItem(userKey)
+                message.style.color = "rgb(233, 47, 233)"
+                message.innerHTML = `"${userKey}" has been deleted`;
+            }
+            else {
+                message.style.color = "red"
+                message.innerHTML = "No note exist at this provided key.";
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #24 Insertion_methods</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="section1">
+        this is section1 div
+      </div>
+      
+      <div id="section2">
+        this is section2 div
+      </div>
+    
+
+    <script>
+let section1 = document.getElementById("section1")
+// HTML me koi element add krny k liya ↓
+section1.innerHTML = section1.innerHTML + "<h2>My name is replit</h2>"
+
+// kisi element ka new child create krny k liya ↓
+let newDiv1 = document.createElement("div")
+newDiv1.innerHTML = "<h1>My name is replit 2nd</h1>"
+section1.appendChild(newDiv1)
+// section1.append(newDiv1)
+// document.body.appendChild(newDiv1)
+
+
+let section2 = document.getElementById("section2")
+// is tra ye #section div k start me creat ho hoga (first child) ↓
+let newDiv2 = document.createElement("span")
+newDiv2.innerHTML = "<h2>I am prepend span</h2>"
+section2.prepend(newDiv2)
+
+// is tra ye #section2 sy pahly print hoga (outside) ↓
+// section2.before(newDiv2)
+
+// is tra ye #section2 k baad me print hoga (outside) ↓
+// section2.after(newDiv2)
+
+// kisi bhi element ko replace krny k liya
+// section2.replaceWith(newDiv2)
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        .bulb-off {
+            width: 400px;
+            height: 400px;
+            background-image: url("https://i.pinimg.com/564x/3f/cb/04/3fcb04b9204ae407de4ee0f85bd90dc6.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .bulb-on {
+            background-image: url("https://i.pinimg.com/564x/8b/e0/60/8be0603fa9222908eac38746f7c72c2a.jpg");
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>Show diffrent alert with diffrent button</h2>
+        <!-- Q1  -->
+        <button onclick="alert('This is first button bro')">First</button>
+        <button onclick="alert('This is second button bro')">Second</button>
+        <button onclick="alert('This is third button bro')">Third</button>
+    </div>
+
+
+    <div>
+        <h2>Bookmark website using href</h2>
+        <!-- Q2  -->
+        <a href="https://google.com"><button>Google</button></a>
+        <a href="https://fb.com"><button>Facebook</button></a>
+        <a href="https://instagram.com"><button>Instagram</button></a>
+    </div>
+
+    <div>
+        <h2>Bookmark website using event listener</h2>
+        <!-- Q3  -->
+        <button id="btn1">Google</button>
+        <button id="btn2">Facebook</button>
+        <button id="btn3">Instagram</button>
+    </div>
+
+
+    <p>↓ Photo blinking bulb ↓</p>
+    <div id="bulb2" class="bulb-off bulb-on"></div>
+
+
+    <script>
+        let btn1 = document.getElementById("btn1")
+        let btn2 = document.getElementById("btn2")
+        let btn3 = document.getElementById("btn3")
+
+        btn1.addEventListener("click", function () {
+            // existing tab me url open krny k liya ↓
+            window.location.href = "https://google.com"
+            // window.open("https://google.com")
+        })
+
+        btn2.addEventListener("click", function () {
+            // new tab me open krny k liya ↓
+            window.open("https://fb.com")
+        })
+
+        btn3.addEventListener("click", function () {
+            window.open("https://instagram.com")
+        })
+
+        // Q4 
+
+        setInterval(function () {
+            console.log("I am repeat after every 5 seconds")
+        }, 5000)
+
+        // Q5
+
+        setInterval(function () {
+            document.querySelector("#bulb2").classList.toggle("bulb-on")
+        }, 1000)
+
+
+    </script>
+</body>
+
+</html>

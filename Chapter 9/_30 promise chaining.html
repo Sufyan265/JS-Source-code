@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Check console</h2>
+
+    <script>
+        /*
+        // promise chaining 
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log("This is 1st promise execution")
+                resolve("promise 1")
+            }, 2000)
+        })
+
+        // is tra 1 k baad 1 promise run kr skty he ↓
+        // is me pahly wala jb tk execute nhi ho jata dusra wait kry ga (Not indipendent) ↓
+
+        p1.then((value) => {
+            console.log(value)
+            let p2 = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("This is 2nd promise execution")
+                    resolve("promise 2")
+                }, 2000)
+            })
+            return p2
+        }).then((value) => {
+            console.log(value)
+            // return is tra bhi kr skty he ↓
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("This is 3rd promise execution")
+                    resolve("promise 3")
+                }, 2000)
+            })
+            // is tra javascript isko automaticaly promise bnaa dy gi ↓
+        }).then((value) => {
+            console.log(value)
+            console.log("This is 4th promise execution")
+            return 265
+        })
+            */
+
+
+        // load script me promise use krny ka method ↓
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                let script = document.createElement("script")
+                script.src = src
+                document.body.appendChild(script)
+                script.onload = () => {
+                    resolve("Script has been loaded sir!")
+                }
+                script.onerror = () => {
+                    reject(0)
+                }
+            })
+        }
+        let p1 = loadScript("shttps://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js")
+
+        p1.then((value) => {
+            console.log(value)
+            // ham yha pr or bhi new Scripts load kr skty he ".then" ka use kr k ←
+
+        }).catch((error) => {
+            console.log("Sorry sir but we have catch some error during script loading")
+        })
+
+    </script>
+</body>
+
+</html>

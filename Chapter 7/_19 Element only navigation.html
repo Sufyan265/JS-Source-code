@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #19 Element_only_navigation</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        .body_child {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul id="unorder">
+            <li>Home</li>
+            <li>Abount</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <button onclick="bgColor2()">Click for color</button>
+
+    <div class="body_child">
+        This is body child div
+        <span>This is 1st span</span>
+        <span>This is 2nd span</span>
+        <span>This is 3rd span</span>
+    </div>
+
+
+    <script>
+        let e = document.body
+
+        console.log("The first child is ", e.firstChild)
+        console.log("The first element child is ", e.firstElementChild) // is trha sirft element print hoga (yaani comment, #text etc. print nhi ho gy)
+
+        console.log("_________________________________2")
+
+        let b = document.body.firstElementChild
+
+        console.log(b.nextElementSibling)
+        console.log(b.previousElementSibling) // privious element sibling access krny k liya
+
+        console.log(b.children) // b k child ko access krny k liya
+
+        console.log("_________________________________3")
+
+        // id sy child ko access krny k liya ↓
+        let ul = document.getElementById("unorder")
+        let child = unorder.children
+        console.log(child)
+
+        console.log(child[2])
+
+        console.log("_________________________________4")
+
+        // class sy child ko access krny k liya ↓
+        let clas = document.getElementsByClassName("body_child")[0].children
+        console.log(clas)
+
+        console.log("_________________________________5")
+
+        const bgColor = () => {
+            document.body.firstElementChild.style.background = "yellow"
+        }
+        console.log(bgColor())
+
+        function bgColor2() {
+            document.body.firstElementChild.style.background = "cyan"
+        }
+
+
+    </script>
+</body>
+
+</html>

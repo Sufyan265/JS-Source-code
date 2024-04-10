@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Lato", sans-serif;
+            font-size: 20pt;
+            font-weight: normal;
+            background: lightblue;
+            /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(-90deg,
+                    lightblue,
+                    black);
+            /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(-90deg,
+                    lightblue,
+                    black);
+            /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(-90deg,
+                    lightblue,
+                    black);
+            /* For Firefox 3.6 to 15 */
+            background: linear-gradient(-90deg, lightblue, black);
+            /* Standard syntax */
+        }
+
+        .main {
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .button1 {
+            padding: 20px;
+            background: transparent;
+            text-shadow: 1px 1px 1px #202020;
+            font-family: "Lato", sans-serif;
+            font-size: 18pt;
+            border: 1px solid lightblue;
+            color: lightblue;
+        }
+
+
+
+
+
+        .counter2 {
+            background-color: #f5f5f5;
+            font-family: Arial;
+            font-size: 20px;
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        .button2 {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 30px;
+            margin: 10px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+        <h3>Click Counter</h3>
+        <button class="button1" id="minus">-</button>
+
+        <button class="button1" id="counte">Count: 0</button>
+
+        <button class="button1" id="plus">+</button>
+
+        <h5>Good practice: Counter by using HTML, CSS and JavaScript</h5>
+
+    </div>
+    <div class="counter2">
+        <h1>Simple Counter</h1>
+        <button class="button2" onclick="decrease()">-</button>
+        <span id="number">0</span>
+        <button class="button2" onclick="increase()">+</button>
+    </div>
+
+    <script>
+        let plus = document.getElementById("plus"),
+            count = 0;
+        let counte = document.getElementById("counte")
+        plus.onclick = function () {
+            count += 1;
+            counte.innerHTML = "Count: " + count;
+        };
+
+        let minus = document.getElementById("minus")
+        minus.onclick = function () {
+            if (count > 0) {
+                count -= 1;
+                counte.innerHTML = "Count: " + count;
+            }
+        };
+
+    </script>
+
+    <script type="text/javascript">
+        let number = document.getElementById("number");
+
+        function increase() {
+            number.innerHTML++;
+        }
+
+        function decrease() {
+            if (number.innerHTML > 0) {
+                number.innerHTML--;
+            }
+        }
+    </script>
+</body>
+
+</html>

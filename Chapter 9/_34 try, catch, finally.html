@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Check console</h2>
+
+    <script>
+
+// "try" sy ye "what" ko execute kry ga agar error aagya to "catch" block chal jay ga (agar "try" k ander shedule program ha to "catch" nhi chly ga) ↓
+try {
+  console.log(What)
+}
+
+catch (error) {
+  console.log("Error aagya ha bhai log = " + error)
+}
+
+  // finaly to chly ga chahy try me error aay yaa catch me ye phir bhi chly ga. ye normaly is cleanup k liya use hota ha for example ↓
+  // Exit the window
+  // Close the file
+  // restore program  etc.
+finally {
+  console.log("I am finally and I'm very Stubborn keyword")
+}
+console.log("_________________________________2")
+
+// Error object 
+
+try {
+  // console.log(Sufyan)
+  throw new ReferenceError("This is my own made error")
+}
+catch (error) {
+  // is tra error name of error message alag alag print kr skty he
+  console.log("Error name is = " + error.name)
+  console.log("Error message is = " + error.message)
+  console.log("Error stack is = " + error.stack)
+}
+console.log("_________________________________3")
+
+try {
+  let age = parseInt(prompt("Enter your age"))
+
+  if (age > 150) {
+    throw new Error("This is probably not true")
+  }
+  else {
+    console.log("Yes! you entered the correct age")
+  }
+}
+
+catch (error) {
+  console.log(error.name)
+  console.log(error.message)
+  // console.log(error.stack)
+}
+
+
+    </script>
+</body>
+</html>

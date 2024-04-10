@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #23 innerHTML & attribute</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <span id="first" hidden>I am a span</span>
+    <span id="second">I am second span</span>
+
+    <div>________________________________2</div>
+
+    <div id="box1" class="div1">
+        My name is Sufyan and father name is Saleem
+    </div>
+
+    <div id="box2">
+        I am second divsion tag
+    </div>
+
+    <div id="box3" class="div3">
+        I am third divsion tag
+    </div>
+
+    <div id="box4" class="div4" data-forth="forth" data-dibba4="dibba4">
+        I am forth divsion tag
+    </div>
+
+
+    <script>
+        let first = (document.getElementById("first"))
+        // is tra object with properties print hoga ↓
+        console.dir(document.getElementsByTagName("span"))
+
+        // is tra #first ko access kr skty he (is k ander sary elements ko bhi) ↓
+        console.log(first.innerHTML)
+
+        // #first k data ko change krny k liya ↓
+        // console.log(first.innerHTML = "<b>I'm bold</b>")
+
+        let second = (document.getElementById("second"))
+        // is tra #first k sath us ka tag bhi print hoga ↓
+        console.log(second.outerHTML)
+
+        // outerHTML sy bhi #first k data ko change kr skty he ↓
+        // console.log(second.outerHTML = "<div>I'm div</div>") 
+
+        // kisi element k only text ko access krny k liya (is my body k ander ka saar text aa jay ga) ↓
+        console.log(first.textContent)
+
+        // hidden element ko wapis lany k liya ↓
+        first.hidden = false
+
+        console.log("_________________________________2")
+
+        let box1 = (document.getElementById("box1"))
+
+        // kisi element ka koi attribute maloom krny k liya ↓
+        console.log(box1.getAttribute("class"))
+
+        // kisi element me check krny k liya k kya ye attribute ha nhi (true or false) ↓
+        console.log(box1.hasAttribute("class"))
+        console.log(box1.hasAttribute("not"))
+
+        let box2 = (document.getElementById("box2"))
+        // kisi element me koi attribute set krny k liya ↓
+        console.log(box2.setAttribute("class", "div2"))
+
+        let box3 = (document.getElementById("box3"))
+        // kisi element me koi attribute remove krny k liya ↓
+        console.log(box3.removeAttribute("class"))
+
+        // #box3 k sary attributes ko access krny k liya
+        console.log(box1.attributes)
+
+        let box4 = (document.getElementById("box4"))
+        // is tra agar javascript box4 name ka koi attribute aa gya to hm apny sary code ko is tra change kr skty he ↓
+        console.log(box4.dataset)
+        console.log(box4.dataset.forth)
+        console.log(box4.dataset.dibba4)
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

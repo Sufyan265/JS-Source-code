@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #13 Array loops</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Check console</h2>
+
+    <script>
+        let ary = [22, 33, 44, 55, 66, 77]
+
+        for (let i = 0; i < ary.length; i++) {
+            console.log(ary[i])
+        }
+        console.log("________________________2")
+
+        // forEach loop
+        let ary2 = [3, 4, 5, 6, 7, 88]
+
+        ary2.forEach((x) => {
+            console.log(x * x)
+        })
+
+        console.log("________________________3")
+
+        // Array.from
+        let name = "Sufyan"
+
+        let change = Array.from(name) // kisi dusry element ko array me change krny k iya
+        console.log(change)
+
+        console.log("________________________4")
+
+        // For of loop 
+        let name2 = ["Rehan", 45, 33, 34, 11]
+        for (let a of name2) { // array value (item) ko access krny k liya
+            console.log(a)
+        }
+
+        // For in loop 
+        let name3 = ["Rehan", 45, 33, 34, 11]
+        for (let b in name3) { // array keys ko access krny k liya
+            console.log(b)
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

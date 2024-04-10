@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #32 Promise_API_methods</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Check console</h2>
+
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Value no. 1")
+            }, 2000)
+        })
+
+        let p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // resolve("Value no. 2")
+                reject(new Error("This value no. 2 Error"))
+            }, 1000)
+        })
+
+        let p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Value no. 3")
+            }, 3000)
+        })
+
+        // .all() sy sb primises ka result 1 sath dekh skty he (yaani jb saary promises execute ho jay gy tb result mily ga) (agar 1 bhi reject ho gai to baki k results bhi nhi mily gy) ↓
+
+        let method1 = Promise.all([p1, p2, p3])
+        method1.then((value) => {
+            console.log(value)
+        })
+
+// .allSettled() sy agr 1 promise reject ho gai to to baki 2 ka result mil jay ga us 1 ko chor kr ↓
+        /*
+        let method2 = Promise.allSettled([p1, p2, p3])
+        method2.then((value) => {
+        console.log(value)
+        })
+        */
+// .rece() sy jo value pahly execute ho gi us ka result mil jay ga. sirf 1 value ka result mily ga (chahy value error ho ya resolved ye jo pahly execute hogi us ka result dikhay ga) ↓
+        /*
+        let method3 = Promise.race([p1, p2, p3])
+        method3.then((value) => {
+        console.log(value)
+        })
+        */
+
+// .any() sy jo sb sy pahly only resolved value execute hogi us ka result mily ga (only 1 value print hogi) ↓
+        /*
+        let method4 = Promise.any([p1, p2, p3])
+        method4.then((value) => {
+        console.log(value)
+        })
+        */
+
+// .resolve() 1 resolved value bnata ha ↓
+        /*
+        let method5 = Promise.resolve("Done")
+        method5.then((value) => {
+        console.log(value)
+        })
+        */
+// .reject() 1 rejected value bnata ha ↓
+        /*
+        let method6 = Promise.reject(new Error("This is genrated error"))
+        method6.then((value) => {
+        console.log(value)
+        })
+        */
+
+
+
+
+    </script>
+</body>
+
+</html>

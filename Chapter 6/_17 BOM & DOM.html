@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #17 BOM & DOM</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+    <p id="sufi"></p>
+    <p class="sufyan"></p>
+    <p id = "width-height"></p>
+
+    <script>
+        console.log(window)
+        console.log(document) /// JS saari html ko 1 document file me convert kr deti ha jis ko is tra access kr skty he
+        console.log(document.body)
+
+        document.body.style.background = "yellow"
+
+        document.getElementById("sufi").innerHTML = "Kesy aap log";
+
+        let a = document.getElementsByClassName("sufyan");
+        a[0].innerHTML = "My name is Sufyan";
+
+        document.getElementById("sufi").style.color = "blue"
+
+
+        document.getElementById("width-height").innerHTML =
+            "Browser inner window width: " + window.innerWidth + "px<br>" +
+            "Browser inner window height: " + window.innerHeight + "px";
+
+
+
+
+    </script>
+</body>
+
+</html>

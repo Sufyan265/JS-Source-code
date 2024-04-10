@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full page #18 Walking the DOM</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="child-div">This is a div and its carry text</div>
+    <h3 calss="Heading">Hello world</h3>
+
+    <script>
+
+        document.getElementsByClassName("child-div")[0].style.color = "red" // class name sy kisi bhi html page sy element ko find krny k liya yaa changes krny k liya
+
+        console.log(document.documentElement) // is sy full html page aa jata ha 
+
+        console.log(document.head) // is sy html page ki head aa jata ha 
+
+        console.log(document.body) // is sy html page ki body aa jati ha
+
+        document.title = "This is my title" // title access krny k liya
+
+
+        // Children 
+
+        console.log(document.body.firstChild) // first child ko access krny k liya
+        console.log(document.body.lastChild) // last child ko access krny k liya
+        console.log(document.body.childNodes) // saary child ko access krny k liya
+
+        let ary = Array.from(document.body.childNodes) // Array me convert krny k liya
+        console.log(ary)
+
+        console.log(document.head.nextSibling) // use for next sibling me jany k liya
+
+        console.log("_________________________________2")
+
+        // console.log(document.body.firstChild)
+
+        a = document.body.firstChild
+        console.log(a)
+
+        console.log(a.parentNode) // a kaa parent access krny k liya
+        console.log(a.parentElement)
+        console.log(a.nextSibling)
+
+
+
+    </script>
+</body>
+
+</html>
